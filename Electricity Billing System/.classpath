@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="dist/Electricity_Billing_System.jar"/>
+	<classpathentry kind="lib" path="dist/lib/AbsoluteLayout.jar"/>
+	<classpathentry kind="lib" path="dist/lib/KGradientPanel.jar"/>
+	<classpathentry kind="lib" path="dist/lib/mysql-connector-java-8.0.28.jar"/>
+	<classpathentry kind="lib" path="dist/lib/RojeruSan.parte1.jar"/>
+	<classpathentry kind="lib" path="dist/lib/RSFoto_v1.0.jar"/>
+	<classpathentry kind="lib" path="dist/lib/TimingFramework-0.55.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
