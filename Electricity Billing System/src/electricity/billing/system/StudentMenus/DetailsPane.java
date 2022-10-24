@@ -33,11 +33,11 @@ String full_name;
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField3 = new javax.swing.JTextField();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        fees = new javax.swing.JTextField();
+        stream = new javax.swing.JComboBox<>();
+        phone_no = new javax.swing.JTextField();
+        yoa = new javax.swing.JComboBox<>();
+        sem = new javax.swing.JComboBox<>();
         jTextField4 = new javax.swing.JTextField();
         jCheckBox1 = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
@@ -74,43 +74,43 @@ String full_name;
             }
         });
 
-        jTextField2.setEditable(false);
-        jTextField2.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField2.setText("3,70,000");
-        jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 153)));
-        jTextField2.setSelectionColor(new java.awt.Color(51, 0, 102));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        fees.setEditable(false);
+        fees.setBackground(new java.awt.Color(204, 204, 204));
+        fees.setText("3,70,000");
+        fees.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 153)));
+        fees.setSelectionColor(new java.awt.Color(51, 0, 102));
+        fees.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                feesActionPerformed(evt);
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CSE", "ECE", "EE", "ME","CE" }));
-        jComboBox1.setToolTipText("None");
-        jComboBox1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 153)));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        stream.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CSE", "ECE", "EE", "ME","CE" }));
+        stream.setToolTipText("None");
+        stream.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 153)));
+        stream.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                streamActionPerformed(evt);
             }
         });
 
-        jTextField3.setText("91+ XXXXXXXXXX");
-        jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 153)));
-        jTextField3.setSelectionColor(new java.awt.Color(51, 0, 102));
+        phone_no.setText("91+ XXXXXXXXXX");
+        phone_no.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 153)));
+        phone_no.setSelectionColor(new java.awt.Color(51, 0, 102));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2019", "2020", "2021", "2022","2023" }));
-        jComboBox2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 153)));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        yoa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2019", "2020", "2021", "2022","2023" }));
+        yoa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 153)));
+        yoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                yoaActionPerformed(evt);
             }
         });
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st", "2nd", "3rd", "4th","5th","6th","7th","8th"}));
-        jComboBox3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 153)));
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+        sem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st", "2nd", "3rd", "4th","5th","6th","7th","8th"}));
+        sem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 153)));
+        sem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
+                semActionPerformed(evt);
             }
         });
 
@@ -145,6 +145,14 @@ String full_name;
         rSButtonMetro2.setBackground(new java.awt.Color(51, 0, 102));
         rSButtonMetro2.setText("Submit");
         rSButtonMetro2.setActionCommand("Submit\n");
+        rSButtonMetro2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rSButtonMetro2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                rSButtonMetro2MouseEntered(evt);
+            }
+        });
 
         jCheckBox2.setLabel("All the above details are to the best of my knowledge ");
 
@@ -182,11 +190,11 @@ String full_name;
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jComboBox3, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(stream, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(phone_no, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(yoa, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(sem, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(fees, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jCheckBox1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE))
                                 .addGap(173, 173, 173)
                                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -210,23 +218,23 @@ String full_name;
                             .addComponent(jLabel3))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(stream, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(phone_no, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(yoa, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sem, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fees, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9))
                         .addGap(18, 18, 18)
                         .addComponent(jCheckBox1))
@@ -262,33 +270,49 @@ String full_name;
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+    private void semActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox3ActionPerformed
+    }//GEN-LAST:event_semActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void yoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yoaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_yoaActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void streamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_streamActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_streamActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void feesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_feesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_feesActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void rSButtonMetro2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rSButtonMetro2MouseEntered
+        
+    }//GEN-LAST:event_rSButtonMetro2MouseEntered
+
+    private void rSButtonMetro2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rSButtonMetro2MouseClicked
+        String dept = stream.getSelectedItem().toString();
+        long ph_no = Long.parseLong(phone_no.getText());
+        String year_oa = yoa.getSelectedItem().toString();
+        String semester = sem.getSelectedItem().toString();
+        System.out.println(dept+" "+ph_no+" "+year_oa+" "+semester+" ");
+        try{
+        
+        }
+        catch(Exception e){
+        }
+        
+    }//GEN-LAST:event_rSButtonMetro2MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField fees;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -300,9 +324,11 @@ String full_name;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField phone_no;
     private rojerusan.RSButtonMetro rSButtonMetro2;
+    private javax.swing.JComboBox<String> sem;
+    private javax.swing.JComboBox<String> stream;
+    private javax.swing.JComboBox<String> yoa;
     // End of variables declaration//GEN-END:variables
 }

@@ -94,11 +94,11 @@
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                       <Component id="jTextField1" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jTextField4" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jComboBox1" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField3" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jComboBox2" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jComboBox3" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField2" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="stream" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="phone_no" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="yoa" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="sem" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="fees" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jCheckBox1" alignment="0" pref="175" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
@@ -131,27 +131,27 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jComboBox1" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="stream" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                               <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="phone_no" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jComboBox2" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="yoa" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                               <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jComboBox3" min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="sem" min="-2" pref="22" max="-2" attributes="0"/>
                               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="fees" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -210,7 +210,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField2">
+        <Component class="javax.swing.JTextField" name="fees">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -229,10 +229,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="feesActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
+        <Component class="javax.swing.JComboBox" name="stream">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;CSE&quot;, &quot;ECE&quot;, &quot;EE&quot;, &quot;ME&quot;,&quot;CE&quot; })" type="code"/>
@@ -247,13 +247,13 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="streamActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField3">
+        <Component class="javax.swing.JTextField" name="phone_no">
           <Properties>
             <Property name="text" type="java.lang.String" value="91+ XXXXXXXXXX"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -268,7 +268,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox2">
+        <Component class="javax.swing.JComboBox" name="yoa">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;2019&quot;, &quot;2020&quot;, &quot;2021&quot;, &quot;2022&quot;,&quot;2023&quot; })" type="code"/>
@@ -282,13 +282,13 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="yoaActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox3">
+        <Component class="javax.swing.JComboBox" name="sem">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;1st&quot;, &quot;2nd&quot;, &quot;3rd&quot;, &quot;4th&quot;,&quot;5th&quot;,&quot;6th&quot;,&quot;7th&quot;,&quot;8th&quot;})" type="code"/>
@@ -302,7 +302,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="semActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -387,6 +387,10 @@
             <Property name="text" type="java.lang.String" value="Submit"/>
             <Property name="actionCommand" type="java.lang.String" value="Submit&#xa;"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rSButtonMetro2MouseClicked"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rSButtonMetro2MouseEntered"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="jCheckBox2">
           <Properties>
