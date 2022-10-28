@@ -186,7 +186,7 @@ public class Student_Register extends javax.swing.JFrame {
         String cpassword = CPassword.getText();
         
         try{
-            if(!password.equals(cpassword)) throw new CustomException("Passwords doesnot match");  
+            if(!password.equals(cpassword)) throw new CustomException2("Passwords doesnot match");  
             Conn c = new Conn();
             String query = "insert into register values ('"+university_roll+"', '"+full_name+"', '"+password+"', '"+cpassword+"')";
             c.s.executeUpdate(query);
@@ -195,7 +195,7 @@ public class Student_Register extends javax.swing.JFrame {
             dispose();
             new LoginUI().setVisible(true);
         }
-        catch(CustomException e){
+        catch(CustomException2 e){
             System.out.println("Error: "+e);
             JOptionPane.showMessageDialog(null,"Error : "+e.getMessage());
         }
@@ -267,9 +267,9 @@ public class Student_Register extends javax.swing.JFrame {
     private necesario.MaterialButton materialButton1;
     // End of variables declaration//GEN-END:variables
 }
-class CustomException  extends Exception  
+class CustomException2  extends Exception  
 {  
-    public CustomException (String str)  
+    public CustomException2 (String str)  
     {  
         // calling the constructor of parent Exception  
         super(str);  

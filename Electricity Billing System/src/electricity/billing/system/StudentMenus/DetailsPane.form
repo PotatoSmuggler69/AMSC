@@ -89,7 +89,7 @@
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="rSButtonMetro2" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
-                              <Component id="jCheckBox2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="tickBox" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                       <Component id="jTextField1" alignment="0" max="32767" attributes="0"/>
@@ -163,7 +163,7 @@
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
+                  <Component id="tickBox" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="rSButtonMetro2" min="-2" pref="39" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="4532" max="-2" attributes="0"/>
@@ -392,7 +392,7 @@
             <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rSButtonMetro2MouseEntered"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+        <Component class="javax.swing.JCheckBox" name="tickBox">
           <Properties>
             <Property name="label" type="java.lang.String" value="All the above details are to the best of my knowledge "/>
           </Properties>

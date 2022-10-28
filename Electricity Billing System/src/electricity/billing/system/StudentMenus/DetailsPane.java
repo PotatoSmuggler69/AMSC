@@ -1,8 +1,11 @@
 
 package electricity.billing.system.StudentMenus;
+import electricity.billing.system.Conn;
 import javax.swing.BorderFactory;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import java.sql.ResultSet;
+import java.util.InputMismatchException;
+import javax.swing.JOptionPane;
 public class DetailsPane extends javax.swing.JInternalFrame {
 String univ_roll;
 String full_name;
@@ -48,7 +51,7 @@ String full_name;
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         rSButtonMetro2 = new rojerusan.RSButtonMetro();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        tickBox = new javax.swing.JCheckBox();
         jLabel8 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 255));
@@ -154,7 +157,7 @@ String full_name;
             }
         });
 
-        jCheckBox2.setLabel("All the above details are to the best of my knowledge ");
+        tickBox.setLabel("All the above details are to the best of my knowledge ");
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DashBoardIcons/details page.png"))); // NOI18N
 
@@ -185,7 +188,7 @@ String full_name;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox2)
+                            .addComponent(tickBox)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -242,7 +245,7 @@ String full_name;
                         .addGap(108, 108, 108)
                         .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox2)
+                .addComponent(tickBox)
                 .addGap(26, 26, 26)
                 .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4532, 4532, 4532))
@@ -295,15 +298,42 @@ String full_name;
     }//GEN-LAST:event_rSButtonMetro2MouseEntered
 
     private void rSButtonMetro2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rSButtonMetro2MouseClicked
-        String dept = stream.getSelectedItem().toString();
-        long ph_no = Long.parseLong(phone_no.getText());
-        String year_oa = yoa.getSelectedItem().toString();
-        String semester = sem.getSelectedItem().toString();
-        System.out.println(dept+" "+ph_no+" "+year_oa+" "+semester+" ");
-        try{
         
+            
+        
+        
+        
+        try{
+            String dept = stream.getSelectedItem().toString();
+            long ph_no = Long.parseLong(phone_no.getText());
+            String year_oa = yoa.getSelectedItem().toString();
+            String semester = sem.getSelectedItem().toString();
+            System.out.println(dept+" "+ph_no+" "+year_oa+" "+semester+" ");
+            boolean tick = tickBox.isSelected();
+            if(!tick) throw new NonTickException("Tick Box Not Checked");
+            
+            Conn c = new Conn();
+            String query =  "update register set dept='"+dept+"',ph_no ="+ph_no+", yoa='"+year_oa+"', sem='"+semester+"' where univ_roll ='"+univ_roll+"'";
+            c.s.execute(query);               
+            JOptionPane.showMessageDialog(null,"Details Updated");
+                    
         }
+        catch(NonTickException e){
+            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null,"Error : "+e.getMessage());
+        }
+        catch(InputMismatchException e){
+            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null,"Error : Enter data correctly");
+        }
+        catch(NumberFormatException e){
+            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null,"Error : Enter data correctly");
+        }
+
         catch(Exception e){
+            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null,"Error : "+e.getMessage());
         }
         
     }//GEN-LAST:event_rSButtonMetro2MouseClicked
@@ -312,7 +342,6 @@ String full_name;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField fees;
     private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -329,6 +358,13 @@ String full_name;
     private rojerusan.RSButtonMetro rSButtonMetro2;
     private javax.swing.JComboBox<String> sem;
     private javax.swing.JComboBox<String> stream;
+    private javax.swing.JCheckBox tickBox;
     private javax.swing.JComboBox<String> yoa;
     // End of variables declaration//GEN-END:variables
+}
+
+class NonTickException extends Exception{
+    public NonTickException(String message){
+        super(message);
+    }
 }
