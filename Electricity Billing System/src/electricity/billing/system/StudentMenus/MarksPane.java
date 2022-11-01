@@ -1,15 +1,34 @@
 
 package electricity.billing.system.StudentMenus;
+import electricity.billing.system.Conn;
 import javax.swing.BorderFactory;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
-
+import java.sql.ResultSet;
+import javax.swing.table.DefaultTableModel;
 public class MarksPane extends javax.swing.JInternalFrame {
-
+    ResultSet rs;
+    private ResultSet marks_set;
     public MarksPane() {
+        
+        initComponents();
+        add_details();
+        this.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
+        BasicInternalFrameUI ui = (BasicInternalFrameUI)this.getUI();
+        ui.setNorthPane(null);
+    }
+    
+        public MarksPane(ResultSet data) {
+        try{
+            rs = data;
+        }
+        catch(Exception e){
+            System.out.println("Error : "+e);
+        }
         initComponents();
         this.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI ui = (BasicInternalFrameUI)this.getUI();
         ui.setNorthPane(null);
+        
     }
 
     /**
@@ -24,7 +43,7 @@ public class MarksPane extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        MarksTable = new javax.swing.JTable();
 
         setPreferredSize(new java.awt.Dimension(5000, 5000));
 
@@ -33,7 +52,7 @@ public class MarksPane extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Marks Pane");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        MarksTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -41,10 +60,20 @@ public class MarksPane extends javax.swing.JInternalFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Semester 1", "Semester 2", "Semester 3", "Semester 4"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        MarksTable.setColumnSelectionAllowed(true);
+        jScrollPane1.setViewportView(MarksTable);
+        MarksTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -55,8 +84,8 @@ public class MarksPane extends javax.swing.JInternalFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(4913, 4913, 4913))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1090, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 917, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -87,11 +116,32 @@ public class MarksPane extends javax.swing.JInternalFrame {
         setSize(new java.awt.Dimension(5000, 5000));
     }// </editor-fold>//GEN-END:initComponents
 
-
+    private void add_details(){
+        try{
+            Conn c = new Conn();
+            String query = "select * from register";
+            marks_set = c.s.executeQuery(query);
+            
+            while(marks_set.next()){
+                String sem1 = marks_set.getString(1); 
+                String sem2 = marks_set.getString(2);
+                String sem3 =marks_set.getString(3);
+                String sem4 =marks_set.getString(4);
+                String tbdata[] = {sem1,sem2,sem3,sem4};
+                DefaultTableModel tb1 = (DefaultTableModel)MarksTable.getModel();
+                tb1.addRow(tbdata);
+            }
+            
+            
+        }
+        catch(Exception e){
+            System.out.println("Error : "+e.getMessage());
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable MarksTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
