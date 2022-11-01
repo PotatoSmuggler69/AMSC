@@ -4,17 +4,21 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/electricity/billing/system/StudentMenus/FeeStructurePane.java</file>
-            <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/electricity/billing/system/StudentMenus/DetailsPane.java</file>
-            <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/electricity/billing/system/LoginUI.java</file>
-            <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/DashBoardIcons/details%20page.png</file>
-            <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/electricity/billing/system/AdminLogin.java</file>
-            <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/electricity/billing/system/StudentMenus/HomePane.java</file>
-            <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/electricity/billing/system/FirstFrame.java</file>
-            <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/electricity/billing/system/AdminDashBoard1.java</file>
             <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/electricity/billing/system/Admin_Register1.java</file>
-            <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/electricity/billing/system/Admin_Register11.java</file>
+            <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/electricity/billing/system/FirstFrame.java</file>
+            <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/DashBoardIcons/details%20page.png</file>
+            <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/electricity/billing/system/StudentMenus/DetailsPane.java</file>
             <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/electricity/billing/system/StudentDashBoard.java</file>
             <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/electricity/billing/system/Conn.java</file>
+            <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/electricity/billing/system/AdminMenus/AdminHomePane.java</file>
+            <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/electricity/billing/system/LoginUI.java</file>
+            <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/electricity/billing/system/StudentMenus/MarksPane.java</file>
+            <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/electricity/billing/system/AdminMenus/Admin_Student_details_editor.java</file>
+            <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/electricity/billing/system/AdminMenus/AdminDetailsPane.java</file>
+            <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/electricity/billing/system/StudentMenus/HomePane.java</file>
+            <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/electricity/billing/system/AdminLogin.java</file>
+            <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/electricity/billing/system/AdminMenus/AdminFeeStructurePane.java</file>
+            <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/electricity/billing/system/AdminDashBoard1.java</file>
             <file>file:/D:/Coding/Electricity%20Billing%20System/Electricity%20Billing%20System/src/electricity/billing/system/Student_Register.java</file>
         </group>
     </open-files>

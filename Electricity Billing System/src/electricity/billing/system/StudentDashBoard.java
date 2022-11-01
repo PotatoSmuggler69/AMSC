@@ -417,7 +417,7 @@ public class StudentDashBoard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
-        HomePane shome = new HomePane();
+        HomePane shome = new HomePane(dataset);
         jDesktopPanel.removeAll();
        jDesktopPanel.add(shome).setVisible(true);
     }//GEN-LAST:event_HomeMouseClicked
