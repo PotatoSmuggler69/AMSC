@@ -423,7 +423,7 @@ public class StudentDashBoard extends javax.swing.JFrame {
     }//GEN-LAST:event_HomeMouseClicked
 
     private void MarksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MarksMouseClicked
-        MarksPane smarks = new MarksPane();
+        MarksPane smarks = new MarksPane(dataset);
         jDesktopPanel.removeAll();
        jDesktopPanel.add(smarks).setVisible(true);
     }//GEN-LAST:event_MarksMouseClicked
