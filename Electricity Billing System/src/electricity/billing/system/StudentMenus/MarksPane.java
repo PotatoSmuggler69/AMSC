@@ -9,9 +9,9 @@ public class MarksPane extends javax.swing.JInternalFrame {
     ResultSet rs;
     private ResultSet marks_set;
     public MarksPane() {
-        
-        initComponents();
         add_details();
+        initComponents();
+        
         this.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI ui = (BasicInternalFrameUI)this.getUI();
         ui.setNorthPane(null);
@@ -25,6 +25,7 @@ public class MarksPane extends javax.swing.JInternalFrame {
             System.out.println("Error : "+e);
         }
         initComponents();
+        add_details();
         this.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI ui = (BasicInternalFrameUI)this.getUI();
         ui.setNorthPane(null);
@@ -54,10 +55,7 @@ public class MarksPane extends javax.swing.JInternalFrame {
 
         MarksTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Semester 1", "Semester 2", "Semester 3", "Semester 4"
