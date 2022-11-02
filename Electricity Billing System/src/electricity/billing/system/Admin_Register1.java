@@ -25,6 +25,7 @@ public class Admin_Register1 extends javax.swing.JFrame {
         materialButton1 = new necesario.MaterialButton();
         jLabel3 = new javax.swing.JLabel();
         Employee_reg_confirm = new javax.swing.JCheckBox();
+        jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -47,7 +48,7 @@ public class Admin_Register1 extends javax.swing.JFrame {
                 UnivRollActionPerformed(evt);
             }
         });
-        jPanel1.add(UnivRoll, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 270, -1));
+        jPanel1.add(UnivRoll, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 270, -1));
 
         CPassword.setForeground(new java.awt.Color(87, 12, 148));
         CPassword.setText("********");
@@ -59,7 +60,7 @@ public class Admin_Register1 extends javax.swing.JFrame {
                 CPasswordActionPerformed(evt);
             }
         });
-        jPanel1.add(CPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 270, -1));
+        jPanel1.add(CPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 270, -1));
 
         FullName.setForeground(new java.awt.Color(87, 12, 148));
         FullName.setText("Full Name");
@@ -72,12 +73,12 @@ public class Admin_Register1 extends javax.swing.JFrame {
                 FullNameActionPerformed(evt);
             }
         });
-        jPanel1.add(FullName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 270, -1));
+        jPanel1.add(FullName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 270, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Emoji", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(87, 12, 148));
         jLabel1.setText("Employee Registration Form");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 460, 50));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 460, 50));
 
         Password.setForeground(new java.awt.Color(87, 12, 148));
         Password.setText("********");
@@ -90,7 +91,7 @@ public class Admin_Register1 extends javax.swing.JFrame {
                 PasswordActionPerformed(evt);
             }
         });
-        jPanel1.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 270, -1));
+        jPanel1.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 270, -1));
 
         materialButton1.setBackground(new java.awt.Color(87, 12, 148));
         materialButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -106,17 +107,17 @@ public class Admin_Register1 extends javax.swing.JFrame {
                 materialButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(materialButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
+        jPanel1.add(materialButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(87, 12, 148));
-        jLabel3.setText("X");
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cancel_icon_16x.png"))); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, 20, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, 20, 20));
 
         Employee_reg_confirm.setForeground(new java.awt.Color(87, 12, 148));
         Employee_reg_confirm.setText("All the information are to the best of my knowledge");
@@ -125,7 +126,15 @@ public class Admin_Register1 extends javax.swing.JFrame {
                 Employee_reg_confirmActionPerformed(evt);
             }
         });
-        jPanel1.add(Employee_reg_confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 320, -1));
+        jPanel1.add(Employee_reg_confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 320, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/back_icon_24x.png"))); // NOI18N
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, 20));
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -169,10 +178,6 @@ public class Admin_Register1 extends javax.swing.JFrame {
     private void PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PasswordActionPerformed
-
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_jLabel3MouseClicked
 
     private void materialButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_materialButton1MouseClicked
         String employee_id = UnivRoll.getText();
@@ -218,6 +223,15 @@ public class Admin_Register1 extends javax.swing.JFrame {
     private void Employee_reg_confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Employee_reg_confirmActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Employee_reg_confirmActionPerformed
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        this.dispose();
+        new AdminLogin().setVisible(true);
+    }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -267,6 +281,7 @@ public class Admin_Register1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private necesario.MaterialButton materialButton1;

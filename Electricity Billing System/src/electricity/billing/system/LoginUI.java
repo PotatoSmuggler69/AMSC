@@ -63,7 +63,7 @@ public class LoginUI extends javax.swing.JFrame {
 
         CompanyMoto.setForeground(new java.awt.Color(255, 255, 255));
         CompanyMoto.setText("Best college and school management software");
-        SideBar.add(CompanyMoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 260, -1));
+        SideBar.add(CompanyMoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 270, -1));
 
         getContentPane().add(SideBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 400));
 
