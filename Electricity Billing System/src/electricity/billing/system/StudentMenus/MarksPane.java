@@ -7,11 +7,13 @@ import java.sql.ResultSet;
 import javax.swing.table.DefaultTableModel;
 public class MarksPane extends javax.swing.JInternalFrame {
     ResultSet rs;
+    String user_roll;
+    double total;
     private ResultSet marks_set;
     public MarksPane() {
-        add_details();
         initComponents();
-        
+        add_details();
+        add_details();
         this.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI ui = (BasicInternalFrameUI)this.getUI();
         ui.setNorthPane(null);
@@ -20,10 +22,12 @@ public class MarksPane extends javax.swing.JInternalFrame {
         public MarksPane(ResultSet data) {
         try{
             rs = data;
+            user_roll = rs.getString(1);
         }
         catch(Exception e){
             System.out.println("Error : "+e);
         }
+        
         initComponents();
         add_details();
         this.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
@@ -41,10 +45,14 @@ public class MarksPane extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        evaluatorDouble1 = new org.jdesktop.core.animation.timing.evaluators.EvaluatorDouble();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         MarksTable = new javax.swing.JTable();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(5000, 5000));
 
@@ -56,19 +64,20 @@ public class MarksPane extends javax.swing.JInternalFrame {
         jLabel1.setText("Marks Panel");
 
         MarksTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(87, 12, 148)));
+        MarksTable.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         MarksTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Semester 1", "Semester 2", "Semester 3", "Semester 4"
+                "Semester 1", "Semester 2", "Semester 3", "Semester 4", "Semester 5", "Semester 6", "Semester 7", "Semester 8"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -85,28 +94,73 @@ public class MarksPane extends javax.swing.JInternalFrame {
         MarksTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(MarksTable);
         MarksTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        if (MarksTable.getColumnModel().getColumnCount() > 0) {
+            MarksTable.getColumnModel().getColumn(0).setResizable(false);
+            MarksTable.getColumnModel().getColumn(0).setPreferredWidth(15);
+            MarksTable.getColumnModel().getColumn(1).setResizable(false);
+            MarksTable.getColumnModel().getColumn(1).setPreferredWidth(15);
+            MarksTable.getColumnModel().getColumn(2).setResizable(false);
+            MarksTable.getColumnModel().getColumn(2).setPreferredWidth(15);
+            MarksTable.getColumnModel().getColumn(3).setResizable(false);
+            MarksTable.getColumnModel().getColumn(3).setPreferredWidth(15);
+            MarksTable.getColumnModel().getColumn(4).setResizable(false);
+            MarksTable.getColumnModel().getColumn(4).setPreferredWidth(15);
+            MarksTable.getColumnModel().getColumn(5).setResizable(false);
+            MarksTable.getColumnModel().getColumn(5).setPreferredWidth(15);
+            MarksTable.getColumnModel().getColumn(6).setResizable(false);
+            MarksTable.getColumnModel().getColumn(6).setPreferredWidth(15);
+            MarksTable.getColumnModel().getColumn(7).setResizable(false);
+            MarksTable.getColumnModel().getColumn(7).setPreferredWidth(15);
+        }
+
+        jLabel2.setText("Toral CGPA : ");
+
+        jLabel3.setText(Double.toString(total));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addComponent(jLabel2)
+                .addGap(51, 51, 51)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(82, 82, 82)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addContainerGap(147, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 917, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 917, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(4062, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4391, 4391, 4391))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4578, 4578, 4578))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -130,15 +184,19 @@ public class MarksPane extends javax.swing.JInternalFrame {
     private void add_details(){
         try{
             Conn c = new Conn();
-            String query = "select * from register";
+            String query = "select * from marks_panel where univ_roll = "+user_roll;
             marks_set = c.s.executeQuery(query);
             
             while(marks_set.next()){
-                String sem1 = marks_set.getString(1); 
-                String sem2 = marks_set.getString(2);
-                String sem3 =marks_set.getString(3);
-                String sem4 =marks_set.getString(4);
-                String tbdata[] = {sem1,sem2,sem3,sem4};
+                String sem1 = marks_set.getString(2); 
+                String sem2 = marks_set.getString(3);
+                String sem3 =marks_set.getString(4);
+                String sem4 =marks_set.getString(5);
+                String sem5 =marks_set.getString(6);
+                String sem6 =marks_set.getString(7);
+                String sem7 =marks_set.getString(8);
+                String sem8 =marks_set.getString(9);
+                String tbdata[] = {sem1,sem2,sem3,sem4,sem5,sem6,sem7,sem8};
                 DefaultTableModel tb1 = (DefaultTableModel)MarksTable.getModel();
                 tb1.addRow(tbdata);
             }
@@ -151,8 +209,12 @@ public class MarksPane extends javax.swing.JInternalFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable MarksTable;
+    private org.jdesktop.core.animation.timing.evaluators.EvaluatorDouble evaluatorDouble1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

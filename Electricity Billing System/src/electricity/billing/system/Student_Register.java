@@ -197,7 +197,7 @@ public class Student_Register extends javax.swing.JFrame {
         try{
             if(!password.equals(cpassword)) throw new CustomException2("Passwords doesnot match");  
             Conn c = new Conn();
-            String query = "insert into register values ('"+university_roll+"', '"+full_name+"', '"+password+"', '"+cpassword+"')";
+            String query = "insert into register(univ_roll,full_name,pass,cpass) values('"+university_roll+"', '"+full_name+"', '"+password+"', '"+cpassword+"')";
             c.s.executeUpdate(query);
             JOptionPane.showMessageDialog(null,"Account Creared Successfully");
             setVisible(false);
