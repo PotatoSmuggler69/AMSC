@@ -5,14 +5,18 @@ import javax.swing.BorderFactory;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import java.sql.ResultSet;
 import javax.swing.table.DefaultTableModel;
+import java.lang.String;
 public class MarksPane extends javax.swing.JInternalFrame {
+    Double sem1,sem2,sem3,sem4,sem5,sem6,sem7,sem8;
+    String tsem1,tsem2,tsem3,tsem4,tsem5,tsem6,tsem7,tsem8;
     ResultSet rs;
     String user_roll;
     double total;
     private ResultSet marks_set;
+    double tot_marks;
     public MarksPane() {
+        get_full_marks();
         initComponents();
-        add_details();
         add_details();
         this.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI ui = (BasicInternalFrameUI)this.getUI();
@@ -20,6 +24,7 @@ public class MarksPane extends javax.swing.JInternalFrame {
     }
     
         public MarksPane(ResultSet data) {
+        
         try{
             rs = data;
             user_roll = rs.getString(1);
@@ -27,8 +32,9 @@ public class MarksPane extends javax.swing.JInternalFrame {
         catch(Exception e){
             System.out.println("Error : "+e);
         }
-        
+        get_full_marks();
         initComponents();
+        
         add_details();
         this.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI ui = (BasicInternalFrameUI)this.getUI();
@@ -115,7 +121,7 @@ public class MarksPane extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Toral CGPA : ");
 
-        jLabel3.setText(Double.toString(total));
+        jLabel3.setText(Double.toString(tot_marks));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -183,28 +189,64 @@ public class MarksPane extends javax.swing.JInternalFrame {
 
     private void add_details(){
         try{
-            Conn c = new Conn();
-            String query = "select * from marks_panel where univ_roll = "+user_roll;
-            marks_set = c.s.executeQuery(query);
-            
-            while(marks_set.next()){
-                String sem1 = marks_set.getString(2); 
-                String sem2 = marks_set.getString(3);
-                String sem3 =marks_set.getString(4);
-                String sem4 =marks_set.getString(5);
-                String sem5 =marks_set.getString(6);
-                String sem6 =marks_set.getString(7);
-                String sem7 =marks_set.getString(8);
-                String sem8 =marks_set.getString(9);
-                String tbdata[] = {sem1,sem2,sem3,sem4,sem5,sem6,sem7,sem8};
+                String tbdata[] = {tsem1,tsem2,tsem3,tsem4,tsem5,tsem6,tsem7,tsem8};
                 DefaultTableModel tb1 = (DefaultTableModel)MarksTable.getModel();
                 tb1.addRow(tbdata);
-            }
-            
-            
         }
+            
         catch(Exception e){
             System.out.println("Error : "+e.getMessage());
+        }
+    }
+    
+    private void get_full_marks(){
+        Double count=0.0;
+        try{
+            Conn c = new Conn();
+            String query = "select * from marks_panel where univ_roll = "+user_roll;
+            ResultSet tot = c.s.executeQuery(query);
+            while(tot.next()){
+                tsem1 =tot.getString(2);
+                if(tsem1!=null) count+=1.0;
+                sem1 = tsem1==null ? 0.0:Double.parseDouble(tsem1);
+
+                tsem2 =tot.getString(3);
+                if(tsem2!=null) count+=1.0;
+                sem2 = tsem2==null ? 0.0:Double.parseDouble(tsem2);
+                
+                tsem3 =tot.getString(4);
+                if(tsem3!=null) count+=1.0;
+                sem3 = tsem3==null ? 0.0:Double.parseDouble(tsem3);
+                
+                tsem4 =tot.getString(5);
+                if(tsem4!=null) count+=1.0;
+                sem4 = tsem4==null ? 0.0:Double.parseDouble(tsem4);
+                
+                tsem5 =tot.getString(6);
+                if(tsem5!=null) count+=1.0;
+                sem5 = tsem5==null ? 0.0:Double.parseDouble(tsem5);
+                
+                tsem6 =tot.getString(7);
+                if(tsem6!=null) count+=1.0;
+                sem6 = tsem6==null ? 0.0:Double.parseDouble(tsem6);
+
+                tsem7 =tot.getString(8);
+                if(tsem7!=null) count+=1.0;
+                sem7 = tsem7==null ? 0.0:Double.parseDouble(tsem7);
+                
+                tsem8 =tot.getString(9);
+                if(tsem8!=null) count+=1.0;
+                sem8 = tsem8==null ? 0.0:Double.parseDouble(tsem8);
+                break;
+            }
+            
+            tot_marks = (sem1+sem2+sem3+sem4+sem5+sem6+sem7+sem8)/count;
+            tot_marks = Math.round(tot_marks * 100)/100.00;
+        }
+        catch(Exception e){
+            System.out.println("error bc");
+            System.out.println(e.getMessage());
+            
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

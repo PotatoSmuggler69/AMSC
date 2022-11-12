@@ -72,9 +72,9 @@ public class StudentDashBoard extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         Fee_Details = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        jDesktopPanel = new javax.swing.JPanel();
         LogOut = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        LogoutLabel = new javax.swing.JLabel();
+        jDesktopPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -182,7 +182,7 @@ public class StudentDashBoard extends javax.swing.JFrame {
         HomeLayout.setHorizontalGroup(
             HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HomeLayout.createSequentialGroup()
-                .addGap(102, 102, 102)
+                .addGap(35, 35, 35)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -213,7 +213,7 @@ public class StudentDashBoard extends javax.swing.JFrame {
         MarksLayout.setHorizontalGroup(
             MarksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MarksLayout.createSequentialGroup()
-                .addGap(103, 103, 103)
+                .addGap(37, 37, 37)
                 .addComponent(jLabel6)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -244,26 +244,23 @@ public class StudentDashBoard extends javax.swing.JFrame {
         DetailsLayout.setHorizontalGroup(
             DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DetailsLayout.createSequentialGroup()
-                .addGap(108, 108, 108)
+                .addGap(40, 40, 40)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
-                .addContainerGap(166, Short.MAX_VALUE))
-            .addGroup(DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(DetailsLayout.createSequentialGroup()
-                    .addGap(102, 102, 102)
-                    .addComponent(jLabel7)
-                    .addContainerGap(103, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         DetailsLayout.setVerticalGroup(
             DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DetailsLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel3)
-                .addContainerGap(22, Short.MAX_VALUE))
-            .addGroup(DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(DetailsLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jLabel7)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(DetailsLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabel3))
+                    .addGroup(DetailsLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel7)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Fee_Details.setBackground(new java.awt.Color(35, 14, 50));
@@ -280,7 +277,7 @@ public class StudentDashBoard extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 24)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Microsoft JhengHei", 0, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Fee Status");
 
@@ -288,35 +285,65 @@ public class StudentDashBoard extends javax.swing.JFrame {
         Fee_Details.setLayout(Fee_DetailsLayout);
         Fee_DetailsLayout.setHorizontalGroup(
             Fee_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
-            .addGroup(Fee_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(Fee_DetailsLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel8)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(Fee_DetailsLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel8)
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         Fee_DetailsLayout.setVerticalGroup(
             Fee_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 44, Short.MAX_VALUE)
-            .addGroup(Fee_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(Fee_DetailsLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel8)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(Fee_DetailsLayout.createSequentialGroup()
+                .addComponent(jLabel8)
+                .addGap(0, 11, Short.MAX_VALUE))
+        );
+
+        LogOut.setBackground(new java.awt.Color(35, 14, 50));
+        LogOut.setPreferredSize(new java.awt.Dimension(274, 44));
+        LogOut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LogOutMouseClicked(evt);
+            }
+        });
+
+        LogoutLabel.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 24)); // NOI18N
+        LogoutLabel.setForeground(new java.awt.Color(255, 255, 255));
+        LogoutLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DashBoardIcons/logout_x24.png"))); // NOI18N
+        LogoutLabel.setText("Logout");
+        LogoutLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LogoutLabelMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout LogOutLayout = new javax.swing.GroupLayout(LogOut);
+        LogOut.setLayout(LogOutLayout);
+        LogOutLayout.setHorizontalGroup(
+            LogOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LogOutLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(LogoutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        LogOutLayout.setVerticalGroup(
+            LogOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LogOutLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LogoutLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Home, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Marks, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Details, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Fee_Details, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Home, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Marks, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Details, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Fee_Details, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, 0))
+                .addContainerGap()
+                .addComponent(LogOut, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -329,46 +356,13 @@ public class StudentDashBoard extends javax.swing.JFrame {
                 .addComponent(Details, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(Fee_Details, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jDesktopPanel.setBackground(new java.awt.Color(255, 255, 255));
         jDesktopPanel.setForeground(new java.awt.Color(255, 51, 51));
-
-        LogOut.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 102)));
-        LogOut.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LogOutMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                LogOutMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                LogOutMouseExited(evt);
-            }
-        });
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 0, 102));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DashBoardIcons/LogOut.png"))); // NOI18N
-        jLabel2.setText("Log Out");
-
-        javax.swing.GroupLayout LogOutLayout = new javax.swing.GroupLayout(LogOut);
-        LogOut.setLayout(LogOutLayout);
-        LogOutLayout.setHorizontalGroup(
-            LogOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LogOutLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(73, Short.MAX_VALUE))
-        );
-        LogOutLayout.setVerticalGroup(
-            LogOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LogOutLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
-                .addContainerGap())
-        );
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DashBoardIcons/default pic.png"))); // NOI18N
 
@@ -377,18 +371,14 @@ public class StudentDashBoard extends javax.swing.JFrame {
         jDesktopPanelLayout.setHorizontalGroup(
             jDesktopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPanelLayout.createSequentialGroup()
-                .addGap(633, 633, 633)
-                .addComponent(LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jDesktopPanelLayout.createSequentialGroup()
-                .addGap(230, 230, 230)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(221, 221, 221)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(319, 319, 319))
         );
         jDesktopPanelLayout.setVerticalGroup(
             jDesktopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(82, 82, 82)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -499,22 +489,19 @@ public class StudentDashBoard extends javax.swing.JFrame {
        
     }//GEN-LAST:event_LoginnerMouseExited
 
-    private void LogOutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutMouseEntered
-        LogOut.setSize(277, 41);
-    }//GEN-LAST:event_LogOutMouseEntered
+    private void LoginnerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginnerMouseClicked
+        
+    }//GEN-LAST:event_LoginnerMouseClicked
 
-    private void LogOutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutMouseExited
-        LogOut.setSize(0, 0);
-    }//GEN-LAST:event_LogOutMouseExited
+    private void LogoutLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutLabelMouseClicked
+        this.dispose();
+        new LoginUI().setVisible(true);
+    }//GEN-LAST:event_LogoutLabelMouseClicked
 
     private void LogOutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutMouseClicked
-        dispose();
+        this.dispose();
         new LoginUI().setVisible(true);
     }//GEN-LAST:event_LogOutMouseClicked
-
-    private void LoginnerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginnerMouseClicked
-        LogOut.setSize(277, 41);
-    }//GEN-LAST:event_LoginnerMouseClicked
 
     /**
      * @param args the command line arguments
@@ -558,12 +545,12 @@ public class StudentDashBoard extends javax.swing.JFrame {
     private javax.swing.JPanel Home;
     private javax.swing.JPanel LogOut;
     private javax.swing.JLabel Loginner;
+    private javax.swing.JLabel LogoutLabel;
     private javax.swing.JPanel Marks;
     private javax.swing.JLabel MaximizeButton;
     private javax.swing.JLabel MinimizeButton;
     private javax.swing.JPanel jDesktopPanel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

@@ -41,7 +41,7 @@ public class Loading extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(153, 255, 255));
         jLabel3.setText("AMSC Solutions");
-        MainBackground.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 340, 90));
+        MainBackground.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 290, 80));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/loading2.gif"))); // NOI18N
         jLabel4.setText("jLabel4");
