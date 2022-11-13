@@ -14,6 +14,7 @@ public class MarksPane extends javax.swing.JInternalFrame {
     double total;
     private ResultSet marks_set;
     double tot_marks;
+    Double tot_per;
     public MarksPane() {
         get_full_marks();
         initComponents();
@@ -59,6 +60,8 @@ public class MarksPane extends javax.swing.JInternalFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(5000, 5000));
 
@@ -119,9 +122,15 @@ public class MarksPane extends javax.swing.JInternalFrame {
             MarksTable.getColumnModel().getColumn(7).setPreferredWidth(15);
         }
 
+        jLabel2.setForeground(new java.awt.Color(102, 0, 102));
         jLabel2.setText("Toral CGPA : ");
 
         jLabel3.setText(Double.toString(tot_marks));
+
+        jLabel4.setForeground(new java.awt.Color(102, 0, 102));
+        jLabel4.setText("Equivalent Percentage :");
+
+        jLabel5.setText(tot_per.toString());
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -129,9 +138,13 @@ public class MarksPane extends javax.swing.JInternalFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(77, 77, 77)
-                .addComponent(jLabel2)
-                .addGap(51, 51, 51)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel2))
+                .addGap(45, 45, 45)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -141,7 +154,11 @@ public class MarksPane extends javax.swing.JInternalFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
-                .addContainerGap(147, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -242,6 +259,8 @@ public class MarksPane extends javax.swing.JInternalFrame {
             
             tot_marks = (sem1+sem2+sem3+sem4+sem5+sem6+sem7+sem8)/count;
             tot_marks = Math.round(tot_marks * 100)/100.00;
+            tot_per = (double)(Math.round(tot_marks * 9.09 * 100)/100);
+            
         }
         catch(Exception e){
             System.out.println("error bc");
@@ -255,6 +274,8 @@ public class MarksPane extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
